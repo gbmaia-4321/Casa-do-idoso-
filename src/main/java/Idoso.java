@@ -10,6 +10,7 @@ public class Idoso {
     private String cuidadorResponsavel;
     private ArrayList<Consulta> historicoConsultas = new ArrayList<>();
     private ArrayList<Ocorrencia> ocorrencias = new ArrayList<>();
+    private ArrayList<Atividade> atividades = new ArrayList<>();
     Consulta consulta = new Consulta();
 
 
@@ -18,13 +19,7 @@ public class Idoso {
         this.idade = idade;
     }
 
-    public void solicitarConsulta(){
-
-    }
-
-    public void visualizarConsulta(){
-
-    }
+    //getters setters
 
     public int getId() {
         return id;
@@ -33,6 +28,7 @@ public class Idoso {
     public void setId(int id) {
         this.id = id;
     }
+
     public String getNome() {
         return nome;
     }
@@ -81,12 +77,22 @@ public class Idoso {
         this.historicoConsultas = historicoConsultas;
     }
 
+
+
+    //metodos
+
+    public void solicitarConsulta(){
+
+    }
+
+    public void visualizarConsulta(){
+
+    }
+
+
     public void adicionarOcorrencia(Ocorrencia o) {
         ocorrencias.add(o);
     }
 
-    public ArrayList<Ocorrencia> getOcorrencias() {
-        return ocorrencias;
-    }
 
 }
