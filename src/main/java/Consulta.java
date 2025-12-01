@@ -74,7 +74,7 @@ public class Consulta {
     }
 
     public void registrarConsulta(){
-        medico.a
+
 
     }
 
