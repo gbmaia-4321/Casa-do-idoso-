@@ -4,21 +4,25 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        // Carrega o FXML - CORRETO
-        Parent root = FXMLLoader.load(getClass().getResource("/view.fxml"));
-
-        Scene scene = new Scene(root, 600, 400);
-        primaryStage.setTitle("Casa do Idoso");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
+public class Main {
 
     public static void main(String[] args) {
-        launch(args);
+
+        GerenciamentoFuncionario gerenciamentoFuncionario = new GerenciamentoFuncionario();
+
+        GerenciamentoIdosos gerenciamentoIdosos = new GerenciamentoIdosos();
+
+
+        Secretaria secretaria = new Secretaria(0,"589.687.257-58","Maria","Secretaria",gerenciamentoFuncionario, gerenciamentoIdosos);
+        Idoso idoso = new Idoso("Luiz",75);
+
+
+        gerenciamentoFuncionario.adicionar(secretaria);
+        gerenciamentoFuncionario.listar();
+        gerenciamentoIdosos.adicionar(idoso);
+        gerenciamentoIdosos.listar();
+
+
     }
 
 }

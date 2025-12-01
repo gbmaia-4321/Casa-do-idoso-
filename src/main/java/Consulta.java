@@ -1,5 +1,3 @@
-import java.util.Date;
-
 public class Consulta {
     private int id;
     private Date dataConsulta;
@@ -76,7 +74,7 @@ public class Consulta {
     }
 
     public void registrarConsulta(){
-
+        medico.a
 
     }
 

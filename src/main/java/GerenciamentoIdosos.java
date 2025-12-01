@@ -9,7 +9,8 @@ public class GerenciamentoIdosos {
 
     public void listar() {
         for (Idoso i : idosos) {
-            System.out.println(i);
+            System.out.println("============");
+            System.out.println("Nome: "+i.getNome());
         }
 
     }
