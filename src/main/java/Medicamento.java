@@ -9,6 +9,7 @@ public class Medicamento {
         this.receita = receita;
     }
 
+
     public int getId() {
         return id;
     }
