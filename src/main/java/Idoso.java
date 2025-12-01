@@ -9,6 +9,7 @@ public class Idoso {
     private String quarto;
     private String cuidadorResponsavel;
     private ArrayList<Consulta> historicoConsultas = new ArrayList<>();
+    private ArrayList<Ocorrencia> ocorrencias = new ArrayList<>();
     Consulta consulta = new Consulta();
 
 
@@ -79,4 +80,13 @@ public class Idoso {
     public void setHistoricoConsultas(ArrayList<Consulta> historicoConsultas) {
         this.historicoConsultas = historicoConsultas;
     }
+
+    public void adicionarOcorrencia(Ocorrencia o) {
+        ocorrencias.add(o);
+    }
+
+    public ArrayList<Ocorrencia> getOcorrencias() {
+        return ocorrencias;
+    }
+
 }

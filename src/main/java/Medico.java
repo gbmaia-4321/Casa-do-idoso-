@@ -4,7 +4,8 @@ public class Medico extends Funcionario{
     private boolean disponibilidade;
     private String especialidade;
     private String crm;
-    ArrayList<Consulta> consultas = new ArrayList<>();
+    private AgendaMedico agenda = new AgendaMedico();
+
 
     public Medico(int id, String cpf, String nome, String cargo, boolean disponibilidade, String especialidade, String crm, ArrayList<Consulta> consultas)
     throws DadosinvalidosException {
@@ -16,7 +17,6 @@ public class Medico extends Funcionario{
         if (consultas == null) {
             throw new DadosinvalidosException("A lista de consultas não pode estar vazia.");
         }
-        this.consultas = consultas;
     }
 
 
@@ -50,14 +50,5 @@ public class Medico extends Funcionario{
         this.crm = crm;
     }
 
-    public ArrayList<Consulta> getConsultas() {
-        return consultas;
-    }
 
-    public v   oid setConsultas(ArrayList<Consulta> consultas) throws DadosinvalidosException {
-        if (consultas == null){
-            throw new DadosinvalidosException("A lista de consultas não pode ser ");
-        }
-        this.consultas = consultas;
-    }
 }
