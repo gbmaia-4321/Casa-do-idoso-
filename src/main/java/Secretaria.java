@@ -9,7 +9,6 @@ public class Secretaria extends Funcionario{
     }
 
 
-
     // -------------------------
     // MÉTODOS PARA IDOSOS
     // -------------------------
