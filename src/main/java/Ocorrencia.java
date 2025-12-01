@@ -1,3 +1,7 @@
+
+
+import java.util.Date;
+
 public class Ocorrencia {
     private Date data;
     private Cuidador autor;

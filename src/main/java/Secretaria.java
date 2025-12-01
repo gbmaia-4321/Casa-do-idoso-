@@ -20,6 +20,9 @@ public class Secretaria extends Funcionario{
         gerIdosos.listar();
     }
 
+    public void agendarConsulta(){
+
+    }
 
 
     // -------------------------
@@ -37,9 +40,7 @@ public class Secretaria extends Funcionario{
 
     }
 
-    public void agendarConsulta(){
 
-    }
 
     public boolean verificarVisponibilidadeMedico(Medico medico){
         if (medico.isDisponibilidade() == true){

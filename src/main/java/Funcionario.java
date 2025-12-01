@@ -58,7 +58,6 @@ public abstract class Funcionario {
 
  }
 
-
     public String ExibirInformacoes() {
         return "Funcionario: " + nome +"\n"+
                 "Id: " + id + "\n"+
