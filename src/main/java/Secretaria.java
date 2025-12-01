@@ -39,13 +39,15 @@ public class Secretaria extends Funcionario{
 
     public boolean verificarVisponibilidadeMedico(Medico medico){
         if (medico.isDisponibilidade() == true){
-            return true;
             System.out.println("O medico esta disponivel");
+            return true;
+
         }
 
         else{
-            return false;
             System.out.println("O medico nao esta disponivel");
+            return false;
+
         }
     }
 

@@ -6,7 +6,7 @@ public abstract class Funcionario {
  protected  String nome;
  protected String cargo;
 
-    public Funcionario(int id, String cpf, String nome, String cargo) {
+    public Funcionario(int id, String cpf, String nome, String cargo) throws DadosinvalidosException {
         this.id = id;
         this.cpf = cpf;
         this.nome = nome;
@@ -17,7 +17,10 @@ public abstract class Funcionario {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id) throws DadosinvalidosException {
+        if (id < 0){
+            throw new DadosinvalidosException("O id não pode ser negativo.");
+        }
         this.id = id;
     }
 
@@ -25,7 +28,10 @@ public abstract class Funcionario {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(String cpf) throws DadosinvalidosException {
+        if (cpf == null || cpf.isBlank()){
+            throw new DadosinvalidosException("Cpf não pode estar vazio.");
+        }
         this.cpf = cpf;
     }
 
@@ -41,7 +47,10 @@ public abstract class Funcionario {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
+    public void setCargo(String cargo) throws DadosinvalidosException {
+        if (nome == null || cargo.isBlank()) {
+            throw new DadosinvalidosException("O cargo não pode estar vazio.");
+        }
         this.cargo = cargo;
     }
 
