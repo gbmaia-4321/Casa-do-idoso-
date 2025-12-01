@@ -8,10 +8,7 @@ public class Secretaria extends Funcionario{
         this.gerIdosos = gerIdosos;
     }
 
-    public Secretaria(){
-        gerFunc = new GerenciamentoFuncionario();
-        gerIdosos = new GerenciamentoIdosos();
-    }
+
 
     // -------------------------
     // MÉTODOS PARA IDOSOS
@@ -43,13 +40,15 @@ public class Secretaria extends Funcionario{
 
     public boolean verificarVisponibilidadeMedico(Medico medico){
         if (medico.isDisponibilidade() == true){
-            return true;
             System.out.println("O medico esta disponivel");
+            return true;
+
         }
 
         else{
-            return false;
             System.out.println("O medico nao esta disponivel");
+            return false;
+
         }
     }
 

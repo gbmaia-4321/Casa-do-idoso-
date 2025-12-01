@@ -1,8 +1,10 @@
+import java.util.ArrayList;
+
 public class GerenciamentoIdosos {
-    private ArrayList<Idoso> idosos = new ArrayList<>();
+    private ArrayList<Idoso> idosos = new ArrayList();
 
     public void adicionar(Idoso i) {
-        idosos.add(i);
+       idosos.add(i);
     }
 
     public void listar() {
@@ -11,3 +13,4 @@ public class GerenciamentoIdosos {
         }
 
     }
+}
