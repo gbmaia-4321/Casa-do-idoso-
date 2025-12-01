@@ -33,9 +33,13 @@ public class Secretaria extends Funcionario{
         gerFunc.listar();
     }
 
-    public void alocarIdosoQuarto(){}
+    public void alocarIdosoQuarto(){
 
-    public void agendarConsulta(){}
+    }
+
+    public void agendarConsulta(){
+
+    }
 
     public boolean verificarVisponibilidadeMedico(Medico medico){
         if (medico.isDisponibilidade() == true){

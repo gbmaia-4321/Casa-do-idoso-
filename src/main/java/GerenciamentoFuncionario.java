@@ -8,7 +8,12 @@ public class GerenciamentoFuncionario {
 
     public void listar() {
         for (Funcionario f : funcionarios) {
-            System.out.println(f);
+            System.out.println("==================");
+            System.out.println("Nome: "+f.getNome());
+            System.out.println("==================");
+            System.out.println("Cargo: "+ f.getCargo());
+            System.out.println("==================");
+            System.out.println("Cpf: " + f.getCpf());
         }
     }
 }
