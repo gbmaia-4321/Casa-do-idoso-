@@ -8,10 +8,6 @@ public class Secretaria extends Funcionario{
         this.gerIdosos = gerIdosos;
     }
 
-    public Secretaria(){
-        gerFunc = new GerenciamentoFuncionario();
-        gerIdosos = new GerenciamentoIdosos();
-    }
 
     // -------------------------
     // MÉTODOS PARA IDOSOS
