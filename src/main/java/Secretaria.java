@@ -2,7 +2,7 @@ public class Secretaria extends Funcionario{
     private GerenciamentoFuncionario gerFunc;
     private GerenciamentoIdosos gerIdosos;
 
-    public Secretaria(int id, String cpf, String nome, String cargo, GerenciamentoFuncionario gerFunc, GerenciamentoIdosos gerIdosos) {
+    public Secretaria(int id, String cpf, String nome, String cargo, GerenciamentoFuncionario gerFunc, GerenciamentoIdosos gerIdosos) throws DadosinvalidosException {
         super(id, cpf, nome, cargo);
         this.gerFunc = gerFunc;
         this.gerIdosos = gerIdosos;

@@ -1,5 +1,3 @@
-import java.util.Date;
-
 public class Consulta {
     private int id;
     private Date dataConsulta;
@@ -9,7 +7,7 @@ public class Consulta {
     private String descricao;
     StatusConsulta status;
 
-    public Consulta() {
+    public Consulta(int id, Date dataConsulta, String hora, Idoso idoso, Medico medico, String descricao, StatusConsulta status) {
         this.id = id;
         this.dataConsulta = dataConsulta;
         this.hora = hora;
@@ -75,8 +73,12 @@ public class Consulta {
         this.status = status;
     }
 
+    public void registrarConsulta(){
 
-    public String relatorioConsulta(){
+
+    }
+
+    public String gerarRelatorio(){
         return "=========================================================" + "\n"
                 +"ID: " + id +"\n"
                 +"Data: " + dataConsulta + "\n"
