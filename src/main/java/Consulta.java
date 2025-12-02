@@ -1,13 +1,18 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Consulta {
     private int id;
-    private Date dataConsulta;
+    private String dataConsulta;
     private String hora;
     Idoso idoso;
     Medico medico;
     private String descricao;
     StatusConsulta status;
-
-    public Consulta(int id, Date dataConsulta, String hora, Idoso idoso, Medico medico, String descricao, StatusConsulta status) {
+    Scanner input = new Scanner(System.in);
+    public Consulta(int id, String dataConsulta, String hora, Idoso idoso, Medico medico, String descricao, StatusConsulta status) {
         this.id = id;
         this.dataConsulta = dataConsulta;
         this.hora = hora;
@@ -25,11 +30,11 @@ public class Consulta {
         this.id = id;
     }
 
-    public Date getDataConsulta() {
+    public String getDataConsulta() {
         return dataConsulta;
     }
 
-    public void setDataConsulta(Date dataConsulta) {
+    public void setDataConsulta(String dataConsulta) {
         this.dataConsulta = dataConsulta;
     }
 
@@ -73,20 +78,40 @@ public class Consulta {
         this.status = status;
     }
 
-    public void registrarConsulta(){
+    public void registrarConsulta()  {
+        String arquivo = "ConsultaRegistrada"+ getId() + ".txt";
+
+
+
+        try {
+            FileWriter writer = new FileWriter(arquivo);
+            writer.write("=========================Consulta=======================");
+            writer.write("\nID: "+ getId());
+            writer.write("\nData: "+ getDataConsulta());
+            writer.write("\nHora: "+ getHora());
+            writer.write("\nPaciente: " + idoso.getNome());
+            writer.write("\nMedico: " + medico.getNome());
+            writer.write("\nDescrição: "+ getDescricao());
+            writer.write("\n========================================================");
+            writer.close();
+            System.out.println("Salvando consulta em " + arquivo);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
 
     }
-
-    public String gerarRelatorio(){
-        return "=========================================================" + "\n"
-                +"ID: " + id +"\n"
-                +"Data: " + dataConsulta + "\n"
-                +"Hora: " + hora + "\n"
-                +"Paciente: " + idoso + "\n"
-                +"Medico: " + medico + "\n"
-                +"Descrição: " + descricao + "\n"
-                +"========================================================";
+    public void gerarRelatorio(){
+        System.out.println(
+                "=========================================================" + "\n"
+                        +"ID: " + getId() +"\n"
+                        +"Data: " + getDataConsulta() + "\n"
+                        +"Hora: " + getHora() + "\n"
+                        +"Paciente: " + idoso.getNome() + "\n"
+                        +"Medico: " + medico.getNome() + "\n"
+                        +"Descrição: " + getDescricao() + "\n"
+                        +"========================================================"
+        );
     }
 
 

@@ -1,3 +1,4 @@
+import java.sql.Date;
 import java.util.ArrayList;
 
 public class Idoso {
@@ -9,7 +10,8 @@ public class Idoso {
     private String quarto;
     private String cuidadorResponsavel;
     private ArrayList<Consulta> historicoConsultas = new ArrayList<>();
-    Consulta consulta = new Consulta();
+    Consulta consulta;
+    Date date;
 
 
     public Idoso(String nome, int idade) {
@@ -17,8 +19,8 @@ public class Idoso {
         this.idade = idade;
     }
 
-    public void solicitarConsulta(){
-
+    public void solicitarConsulta(Consulta consulta1){
+        consulta1.gerarRelatorio();
     }
 
     public void visualizarConsulta(){

@@ -9,8 +9,10 @@ public class GerenciamentoIdosos {
 
     public void listar() {
         for (Idoso i : idosos) {
-            System.out.println("============");
+            System.out.println("==================");
             System.out.println("Nome: "+i.getNome());
+            System.out.println("Idade: " + i.getIdade());
+            System.out.println("==================");
         }
 
     }

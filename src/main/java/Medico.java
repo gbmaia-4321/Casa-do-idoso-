@@ -54,7 +54,7 @@ public class Medico extends Funcionario{
         return consultas;
     }
 
-    public v   oid setConsultas(ArrayList<Consulta> consultas) throws DadosinvalidosException {
+    public void setConsultas(ArrayList<Consulta> consultas) throws DadosinvalidosException {
         if (consultas == null){
             throw new DadosinvalidosException("A lista de consultas não pode ser ");
         }
