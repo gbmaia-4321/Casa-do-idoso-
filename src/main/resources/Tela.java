@@ -11,7 +11,7 @@ public class Tela extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/view.fxml"));
 
         Scene scene = new Scene(root, 600, 400);
-        primaryStage.setTitle("Casa do Idoso");
+        primaryStage.setTitle("Casa do idoso.Idoso");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

@@ -1,4 +1,6 @@
-public class Secretaria extends Funcionario{
+package funcionarios;
+
+public class Secretaria extends Funcionario {
     private GerenciamentoFuncionario gerFunc;
     private GerenciamentoIdosos gerIdosos;
 

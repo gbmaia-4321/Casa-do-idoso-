@@ -1,3 +1,7 @@
+package gerenciadores;
+
+import funcionarios.Funcionario;
+
 import java.util.ArrayList;
 
 public class GerenciamentoFuncionario {

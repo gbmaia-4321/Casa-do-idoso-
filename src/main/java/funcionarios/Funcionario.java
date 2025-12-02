@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+package funcionarios;
 
 public abstract class Funcionario {
  protected int id;
@@ -59,7 +59,7 @@ public abstract class Funcionario {
  }
 
     public String ExibirInformacoes() {
-        return "Funcionario: " + nome +"\n"+
+        return "funcionarios.Funcionario: " + nome +"\n"+
                 "Id: " + id + "\n"+
                 "Cpf: " +cpf + "\n"+
                 "Cargo: "+cargo +"\n";

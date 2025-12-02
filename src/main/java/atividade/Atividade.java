@@ -1,3 +1,5 @@
+package atividade;
+
 public class Atividade {
     private String descricao;
     private TipoAtividade tipo;
@@ -22,7 +24,7 @@ public class Atividade {
     }
 
     public String executarAtividade(Atividade atividade){
-        return "Atividade: " + atividade + " Realizada";
+        return "atividade.Atividade: " + atividade + " Realizada";
     }
 
     //metodo editar atividades faltando

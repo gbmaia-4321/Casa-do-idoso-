@@ -1,3 +1,5 @@
+package idoso;
+
 import java.util.ArrayList;
 
 public class Idoso {
@@ -76,8 +78,6 @@ public class Idoso {
     public void setHistoricoConsultas(ArrayList<Consulta> historicoConsultas) {
         this.historicoConsultas = historicoConsultas;
     }
-
-
 
     //metodos
 

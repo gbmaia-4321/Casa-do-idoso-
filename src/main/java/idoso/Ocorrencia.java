@@ -1,4 +1,6 @@
+package idoso;
 
+import funcionarios.Cuidador;
 
 import java.util.Date;
 

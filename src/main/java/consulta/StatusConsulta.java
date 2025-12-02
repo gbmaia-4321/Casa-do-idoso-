@@ -1,3 +1,5 @@
+package consulta;
+
 public enum StatusConsulta {
     MARCADA,
     REALIZADA,

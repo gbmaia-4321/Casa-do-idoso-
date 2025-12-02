@@ -1,3 +1,5 @@
+package agendas;
+
 import java.util.ArrayList;
 
 public class AgendaMedico {

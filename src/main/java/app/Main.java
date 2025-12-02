@@ -1,3 +1,9 @@
+package app;
+
+import funcionarios.Secretaria;
+import gerenciadores.GerenciamentoFuncionario;
+import gerenciadores.GerenciamentoIdosos;
+import idoso.Idoso;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +19,7 @@ public class Main {
         GerenciamentoIdosos gerenciamentoIdosos = new GerenciamentoIdosos();
 
 
-        Secretaria secretaria = new Secretaria(0,"589.687.257-58","Maria","Secretaria",gerenciamentoFuncionario, gerenciamentoIdosos);
+        Secretaria secretaria = new Secretaria(0,"589.687.257-58","Maria","funcionarios.Secretaria",gerenciamentoFuncionario, gerenciamentoIdosos);
         Idoso idoso = new Idoso("Luiz",75);
 
 

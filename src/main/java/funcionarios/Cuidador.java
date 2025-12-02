@@ -1,5 +1,6 @@
+package funcionarios;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class Cuidador {
     ArrayList<Idoso> idososCuidador = new ArrayList<>();

@@ -1,3 +1,8 @@
+package consulta;
+
+import funcionarios.Medico;
+import idoso.Idoso;
+
 import java.util.Date;
 
 public class Consulta {
@@ -82,7 +87,7 @@ public class Consulta {
                 +"Data: " + dataConsulta + "\n"
                 +"Hora: " + hora + "\n"
                 +"Paciente: " + idoso + "\n"
-                +"Medico: " + medico + "\n"
+                +"funcionarios.Medico: " + medico + "\n"
                 +"Descrição: " + descricao + "\n"
                 +"========================================================";
     }

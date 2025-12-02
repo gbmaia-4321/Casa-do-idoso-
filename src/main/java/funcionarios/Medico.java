@@ -1,6 +1,8 @@
+package funcionarios;
+
 import java.util.ArrayList;
 
-public class Medico extends Funcionario{
+public class Medico extends Funcionario {
     private boolean disponibilidade;
     private String especialidade;
     private String crm;

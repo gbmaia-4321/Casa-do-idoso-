@@ -1,3 +1,5 @@
+package medicamento;
+
 public class Receita {
     private String dosagem;
     private String frequencia;
