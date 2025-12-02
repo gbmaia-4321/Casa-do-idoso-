@@ -6,7 +6,7 @@ public class Quarto {
     private int capacidade;
     ArrayList<Idoso> idososNoQuarto = new ArrayList<>();
 
-    public Quarto(int id, int numero, int capacidade, ArrayList<Idoso> idososNoQuarto) {
+    public Quarto(int id, int numero, int capacidade, ArrayList<Idoso> idososNoQuarto) throws FuncionarioJaExistenteException{
         this.id = id;
         this.numero = numero;
         this.capacidade = capacidade;

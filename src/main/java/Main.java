@@ -18,7 +18,8 @@ public class Main {
 
         Idoso idoso1 = new Idoso("Luiz",56);
         Consulta consulta = new Consulta(1,"15/02/2026","15:00",idoso1,medico,"Tratamento",StatusConsulta.MARCADA);
-
+         Funcionario f = new Funcionario() {
+         }
 
         gerenciamentoFuncionario.adicionar(secretaria);
         gerenciamentoFuncionario.adicionar(medico);
