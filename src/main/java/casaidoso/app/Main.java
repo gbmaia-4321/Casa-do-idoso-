@@ -41,3 +41,4 @@ public class Main {
         System.out.println("Ocorrencias do idoso: " + id1.getOcorrencias().size());
     }
 }
+
