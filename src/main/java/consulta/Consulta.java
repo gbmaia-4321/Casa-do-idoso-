@@ -80,7 +80,6 @@ public class Consulta {
         this.status = status;
     }
 
-
     public String relatorioConsulta(){
         return "=========================================================" + "\n"
                 +"ID: " + id +"\n"
