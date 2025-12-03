@@ -1,7 +1,6 @@
 package casaIdoso.funcionarios;
 
 import casaIdoso.consulta.Consulta;
-import casaIdoso.exceptions.DadosinvalidosException;
 
 /**
  * Secretaria: responsável por validar e agendar consultas.
@@ -10,7 +9,7 @@ public class Secretaria extends Funcionario {
 
 
 
-    public Secretaria(int id, String cpf, String nome, String cargo) throws Exception {
+    public Secretaria(int id, String cpf, String nome) throws Exception {
         super(id, cpf, nome, cargo);
     }
 
@@ -20,3 +19,6 @@ public class Secretaria extends Funcionario {
         consulta.setStatus(casaIdoso.consulta.StatusConsulta.AGENDADA);
     }
 }
+
+
+

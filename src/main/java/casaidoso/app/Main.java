@@ -30,8 +30,8 @@ public class Main {
         gi.adicionar(id1);
 
         // Cuidador redige ocorrência
-        casaIdoso.idoso.Ocorrencia o = cuid.redigirOcorrencia(id1.getId(), "Acordou agitado");
-        id1.adicionarOcorrencia(o);
+        casaIdoso.idoso.Ocorrencia o1 = cuid.redigirOcorrencia(id1.getId(), "Acordou agitado");
+        id1.adicionarOcorrencia(o1);
 
         // Cuidador solicita consulta via secretaria
         Consulta c = new Consulta(1, new Date(), "10:00", id1, medico, "Dor no joelho", StatusConsulta.AGENDADA);
@@ -41,4 +41,5 @@ public class Main {
         System.out.println("Ocorrencias do idoso: " + id1.getOcorrencias().size());
     }
 }
+
 
