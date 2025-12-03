@@ -1,7 +1,5 @@
 package casaidoso.exceptions;
 
 public class FuncionarioJaExistenteException extends Exception {
-    public FuncionarioJaExistenteException(String msg) {
-        super(msg);
-    }
+    public FuncionarioJaExistenteException(String message) { super(message); }
 }

@@ -1,23 +1,32 @@
 package casaidoso.funcionarios;
 
 import casaidoso.idoso.Idoso;
-
+import casaidoso.idoso.Ocorrencia;
+import casaidoso.consulta.Consulta;
+import casaidoso.funcionarios.Secretaria;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Cuidador {
-    ArrayList<Idoso> idososCuidador = new ArrayList<>();
+/**
+ * Cuidador: tem lista de ids de idosos sob responsabilidade.
+ */
+public class Cuidador extends Funcionario {
+    private List<Integer> idsIdosos = new ArrayList<>();
 
-    public Cuidador(ArrayList<Idoso> idososCuidador) {
-        this.idososCuidador = idososCuidador;
+    public Cuidador(int id, String cpf, String nome) throws Exception {
+        super(id, cpf, nome, "Cuidador");
     }
 
-    public ArrayList<Idoso> listarIdosos(){
-        return idososCuidador;
+    public void adicionarIdoso(int idosoId) { idsIdosos.add(idosoId); }
+    public List<Integer> getIdsIdosos() { return new ArrayList<>(idsIdosos); }
+
+    public Ocorrencia redigirOcorrencia(int idosoId, String texto) {
+        // cria ocorrência (autor será este cuidador)
+        Ocorrencia o = new Ocorrencia(this, texto);
+        return o;
     }
 
-    public String redigirProblemaSobreIdoso(){
-
-        return "";
+    public void solicitarConsulta(Consulta consulta, Secretaria secretaria) {
+        secretaria.agendarConsulta(consulta);
     }
-
 }

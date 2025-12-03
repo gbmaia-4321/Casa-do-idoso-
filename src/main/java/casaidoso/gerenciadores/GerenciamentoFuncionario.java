@@ -1,23 +1,15 @@
 package casaidoso.gerenciadores;
 
 import casaidoso.funcionarios.Funcionario;
-
 import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * Simple in-memory manager for funcionarios.
+ */
 public class GerenciamentoFuncionario {
-    private ArrayList<Funcionario> funcionarios = new ArrayList<>();
-    public void adicionar(Funcionario funcionario) {
-        funcionarios.add(funcionario);
-    }
+    private List<Funcionario> funcionarios = new ArrayList<>();
 
-
-        public void listar() {
-            for (Funcionario f : funcionarios) {
-                System.out.println(f);
-                System.out.println("=================");
-                System.out.println("Nome: "+f.getNome());
-                System.out.println("Cargo: "+f.getCargo());
-                System.out.println("=================");
-            }
-    }
+    public void adicionar(Funcionario f) { funcionarios.add(f); }
+    public List<Funcionario> listar() { return new ArrayList<>(funcionarios); }
 }

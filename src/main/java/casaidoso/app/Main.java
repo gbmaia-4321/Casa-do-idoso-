@@ -1,49 +1,43 @@
 package casaidoso.app;
 
-import casaidoso.consulta.Consulta;
-import casaidoso.exceptions.DadosinvalidosException;
-import casaidoso.funcionarios.Secretaria;
 import casaidoso.gerenciadores.GerenciamentoFuncionario;
 import casaidoso.gerenciadores.GerenciamentoIdosos;
+import casaidoso.funcionarios.Medico;
+import casaidoso.funcionarios.Secretaria;
+import casaidoso.funcionarios.Cuidador;
+import casaidoso.idoso.Idoso;
+import casaidoso.consulta.Consulta;
+import casaidoso.consulta.StatusConsulta;
+import java.util.Date;
 
-import java.util.ArrayList;
-
+/**
+ * Main de demonstração com fluxo básico.
+ */
 public class Main {
+    public static void main(String[] args) throws Exception {
+        GerenciamentoFuncionario gf = new GerenciamentoFuncionario();
+        GerenciamentoIdosos gi = new GerenciamentoIdosos();
 
-    public static void main(String[] args) throws DadosinvalidosException {
+        Medico medico = new Medico(1, "11111111111", "Dra. Silva", "Geriatria");
+        Secretaria sec = new Secretaria(2, "22222222222", "Mariana");
+        Cuidador cuid = new Cuidador(3, "33333333333", "João");
 
+        gf.adicionar(medico);
+        gf.adicionar(sec);
+        gf.adicionar(cuid);
 
-        GerenciamentoFuncionario gerenciamentoFuncionario = new GerenciamentoFuncionario();
+        Idoso id1 = new Idoso(1, "Seu Antônio", 78, 101);
+        gi.adicionar(id1);
 
-        GerenciamentoIdosos gerenciamentoIdosos = new GerenciamentoIdosos();
-        ArrayList<Consulta> consultas = new ArrayList<>();
+        // Cuidador redige ocorrência
+        casaidoso.idoso.Ocorrencia o = cuid.redigirOcorrencia(id1.getId(), "Acordou agitado");
+        id1.adicionarOcorrencia(o);
 
-        Secretaria secretaria = new Secretaria(1,"258.359.587-52","Luiz","Secretaria",gerenciamentoFuncionario,gerenciamentoIdosos);
+        // Cuidador solicita consulta via secretaria
+        Consulta c = new Consulta(1, new Date(), "10:00", id1, medico, "Dor no joelho", StatusConsulta.AGENDADA);
+        cuid.solicitarConsulta(c, sec);
 
-        Medico medico = new Medico(1,"165.896.741-23","Adão","Medico",true,"Medico","Ola",consultas);
-
-        Idoso idoso1 = new Idoso("Luiz",56);
-        Consulta consulta = new Consulta(1,"15/02/2026","15:00",idoso1,medico,"Tratamento",StatusConsulta.MARCADA);
-
-
-        gerenciamentoFuncionario.adicionar(secretaria);
-        gerenciamentoFuncionario.adicionar(medico);
-        gerenciamentoFuncionario.listar();
-
-        gerenciamentoIdosos.adicionar(idoso1);
-        gerenciamentoIdosos.listar();
-
-
-        idoso1.solicitarConsulta(consulta);
-        consulta.registrarConsulta();
-
-
-
-
-
-        Receita receita = new Receita(1,"3 gotas","3 vezes ao dia","Cada 6 horas");
-        Medicamento medicamento = new Medicamento(1,"Paracetamol","3 Gotas","Durante os 7 dias.");
-        receita.gerarReceita(medicamento);
+        System.out.println("Consultas do medico: " + medico.getAgenda().listar().size());
+        System.out.println("Ocorrencias do idoso: " + id1.getOcorrencias().size());
     }
-
 }

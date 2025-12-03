@@ -1,65 +1,23 @@
 package casaidoso.funcionarios;
 
+import casaidoso.agendas.AgendaMedico;
+import casaidoso.consulta.Consulta;
+import java.util.List;
 import java.util.ArrayList;
 
-public class Medico extends Funcionario{
-    private boolean disponibilidade;
+/**
+ * Médico: possui agenda.
+ */
+public class Medico extends Funcionario {
     private String especialidade;
-    private String crm;
-    ArrayList<Consulta> consultas = new ArrayList<>();
+    private AgendaMedico agenda;
 
-    public Medico(int id, String cpf, String nome, String cargo, boolean disponibilidade, String especialidade, String crm, ArrayList<Consulta> consultas)
-            throws DadosinvalidosException {
-
-        super(id, cpf, nome, cargo);
-        this.disponibilidade = disponibilidade;
+    public Medico(int id, String cpf, String nome, String especialidade) throws Exception {
+        super(id, cpf, nome, "Medico");
         this.especialidade = especialidade;
-        this.crm = crm;
-        if (consultas == null) {
-            throw new DadosinvalidosException("A lista de consultas não pode estar vazia.");
-        }
-        this.consultas = consultas;
+        this.agenda = new AgendaMedico(id);
     }
 
-
-    public boolean isDisponibilidade() {
-        return disponibilidade;
-    }
-
-    public void setDisponibilidade(boolean disponibilidade) {
-        this.disponibilidade = disponibilidade;
-    }
-
-    public String getEspecialidade() {
-        return especialidade;
-    }
-
-    public void setEspecialidade(String especialidade) throws DadosinvalidosException {
-        if (especialidade == null || especialidade.isBlank()) {
-            throw new DadosinvalidosException("A especialidade do médico não pode estar vazia.");
-        }
-        this.especialidade = especialidade;
-    }
-
-    public String getCrm() {
-        return crm;
-    }
-
-    public void setCrm(String crm) throws DadosinvalidosException {
-        if (crm == null || crm.isBlank()){
-            throw new DadosinvalidosException("O CRM não pode estar vazio.");
-        }
-        this.crm = crm;
-    }
-
-    public ArrayList<Consulta> getConsultas() {
-        return consultas;
-    }
-
-    public void setConsultas(ArrayList<Consulta> consultas) throws DadosinvalidosException {
-        if (consultas == null){
-            throw new DadosinvalidosException("A lista de consultas não pode ser ");
-        }
-        this.consultas = consultas;
-    }
+    public AgendaMedico getAgenda() { return agenda; }
+    public String getEspecialidade() { return especialidade; }
 }

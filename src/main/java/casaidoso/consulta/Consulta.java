@@ -1,24 +1,25 @@
 package casaidoso.consulta;
 
-import funcionarios.Medico;
 import casaidoso.idoso.Idoso;
+import casaidoso.funcionarios.Medico;
+import java.util.Date;
+import java.util.Objects;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
-
+/**
+ * Domain object: Consulta (POJO). No persistence, no file I/O here.
+ */
 public class Consulta {
     private int id;
-    private String dataConsulta;
+    private Date data;
     private String hora;
-    Idoso idoso;
-    Medico medico;
+    private Idoso idoso;
+    private Medico medico;
     private String descricao;
-    StatusConsulta status;
-    Scanner input = new Scanner(System.in);
-    public Consulta(int id, String dataConsulta, String hora, Idoso idoso, Medico medico, String descricao, StatusConsulta status) {
+    private StatusConsulta status;
+
+    public Consulta(int id, Date data, String hora, Idoso idoso, Medico medico, String descricao, StatusConsulta status) {
         this.id = id;
-        this.dataConsulta = dataConsulta;
+        this.data = data;
         this.hora = hora;
         this.idoso = idoso;
         this.medico = medico;
@@ -26,98 +27,33 @@ public class Consulta {
         this.status = status;
     }
 
-    public int getId() {
-        return id;
+    // getters and setters
+    public int getId() { return id; }
+    public Date getData() { return data; }
+    public void setData(Date data) { this.data = data; }
+    public String getHora() { return hora; }
+    public void setHora(String hora) { this.hora = hora; }
+    public Idoso getIdoso() { return idoso; }
+    public Medico getMedico() { return medico; }
+    public String getDescricao() { return descricao; }
+    public StatusConsulta getStatus() { return status; }
+    public void setStatus(StatusConsulta status) { this.status = status; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Consulta)) return false;
+        Consulta c = (Consulta) o;
+        return id == c.id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
-    public String getDataConsulta() {
-        return dataConsulta;
+    @Override
+    public String toString() {
+        return "Consulta{id="+id+", data="+data+", hora='"+hora+"', idoso='"+(idoso!=null?idoso.getNome():"null")+"', medico='"+(medico!=null?medico.getNome():"null")+"', status="+status+"}";
     }
-
-    public void setDataConsulta(String dataConsulta) {
-        this.dataConsulta = dataConsulta;
-    }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
-
-    public Idoso getIdoso() {
-        return idoso;
-    }
-
-    public void setIdoso(Idoso idoso) {
-        this.idoso = idoso;
-    }
-
-    public Medico getMedico() {
-        return medico;
-    }
-
-    public void setMedico(Medico medico) {
-        this.medico = medico;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public StatusConsulta getStatus() {
-        return status;
-    }
-
-    public void setStatus(StatusConsulta status) {
-        this.status = status;
-    }
-
-    public void registrarConsulta()  {
-        String arquivo = "ConsultaRegistrada"+ getId() + ".txt";
-
-
-
-        try {
-            FileWriter writer = new FileWriter(arquivo);
-            writer.write("=========================Consulta=======================");
-            writer.write("\nID: "+ getId());
-            writer.write("\nData: "+ getDataConsulta());
-            writer.write("\nHora: "+ getHora());
-            writer.write("\nPaciente: " + idoso.getNome());
-            writer.write("\nMedico: " + medico.getNome());
-            writer.write("\nDescrição: "+ getDescricao());
-            writer.write("\n========================================================");
-            writer.close();
-            System.out.println("Salvando consulta em " + arquivo);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-
-    }
-    public void gerarRelatorio(){
-        System.out.println(
-                "=========================================================" + "\n"
-                        +"ID: " + getId() +"\n"
-                        +"Data: " + getDataConsulta() + "\n"
-                        +"Hora: " + getHora() + "\n"
-                        +"Paciente: " + idoso.getNome() + "\n"
-                        +"Medico: " + medico.getNome() + "\n"
-                        +"Descrição: " + getDescricao() + "\n"
-                        +"========================================================"
-        );
-    }
-
-
-
 }

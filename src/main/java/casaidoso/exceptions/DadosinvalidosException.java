@@ -1,7 +1,5 @@
 package casaidoso.exceptions;
 
-public class DadosinvalidosException extends Exception{
-    public DadosinvalidosException(String msg){
-        super(msg);
-    }
+public class DadosInvalidosException extends Exception {
+    public DadosInvalidosException(String message) { super(message); }
 }

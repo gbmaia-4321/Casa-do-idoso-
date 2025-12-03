@@ -1,9 +1,8 @@
 package casaidoso.consulta;
 
 public enum StatusConsulta {
-    MARCADA,
+    AGENDADA,
+    CONFIRMADA,
     REALIZADA,
-    CANCELADA,
-    REMARCADA
-
+    CANCELADA
 }

@@ -1,33 +1,16 @@
 package casaidoso.atividade;
 
 public class Atividade {
+    private int id;
     private String descricao;
     private TipoAtividade tipo;
-    private double duracao;
 
-    public Atividade(String descricao, TipoAtividade tipo, double duracao) {
+    public Atividade(int id, String descricao, TipoAtividade tipo) {
+        this.id = id;
         this.descricao = descricao;
         this.tipo = tipo;
-        this.duracao = duracao;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public TipoAtividade getTipo() {
-        return tipo;
-    }
-
-    public double getDuracao() {
-        return duracao;
-    }
-
-    public String executarAtividade(Atividade atividade){
-        return "atividade.Atividade: " + atividade + " Realizada";
-    }
-
-    //metodo editar atividades faltando
-
-
+    public String getDescricao() { return descricao; }
+    public TipoAtividade getTipo() { return tipo; }
 }
