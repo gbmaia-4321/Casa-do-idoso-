@@ -1,13 +1,10 @@
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
-public class Tela extends Application {
+
+
+public class Tela {
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        // Carrega o FXML - CORRETO
+    public void start() throws Exception {
+        Carrega o FXML - CORRETO
         Parent root = FXMLLoader.load(getClass().getResource("/view.fxml"));
 
         Scene scene = new Scene(root, 600, 400);
