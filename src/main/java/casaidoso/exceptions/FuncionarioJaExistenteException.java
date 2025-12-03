@@ -1,4 +1,4 @@
-package exceptions;
+package casaidoso.exceptions;
 
 public class FuncionarioJaExistenteException extends Exception {
     public FuncionarioJaExistenteException(String msg) {

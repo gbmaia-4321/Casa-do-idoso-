@@ -1,4 +1,4 @@
-package atividade;
+package casaidoso.atividade;
 
 public class Atividade {
     private String descricao;

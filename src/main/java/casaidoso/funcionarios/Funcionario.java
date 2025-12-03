@@ -1,4 +1,6 @@
-package funcionarios;
+package casaidoso.funcionarios;
+
+import casaidoso.exceptions.DadosinvalidosException;
 
 public abstract class Funcionario {
  protected int id;

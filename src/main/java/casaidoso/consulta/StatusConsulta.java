@@ -1,4 +1,4 @@
-package consulta;
+package casaidoso.consulta;
 
 public enum StatusConsulta {
     MARCADA,

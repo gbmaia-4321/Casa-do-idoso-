@@ -1,6 +1,6 @@
-package funcionarios;
+package casaidoso.funcionarios;
 
-import idoso.Idoso;
+import casaidoso.idoso.Idoso;
 
 import java.util.ArrayList;
 

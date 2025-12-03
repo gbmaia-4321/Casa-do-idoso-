@@ -1,4 +1,4 @@
-package agendas;
+package casaidoso.agendas;
 
 public class AgendaIdoso{
 

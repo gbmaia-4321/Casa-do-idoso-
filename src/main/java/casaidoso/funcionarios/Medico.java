@@ -1,16 +1,15 @@
-package funcionarios;
+package casaidoso.funcionarios;
 
 import java.util.ArrayList;
 
-public class Medico extends Funcionario {
+public class Medico extends Funcionario{
     private boolean disponibilidade;
     private String especialidade;
     private String crm;
-    private AgendaMedico agenda = new AgendaMedico();
-
+    ArrayList<Consulta> consultas = new ArrayList<>();
 
     public Medico(int id, String cpf, String nome, String cargo, boolean disponibilidade, String especialidade, String crm, ArrayList<Consulta> consultas)
-    throws DadosinvalidosException {
+            throws DadosinvalidosException {
 
         super(id, cpf, nome, cargo);
         this.disponibilidade = disponibilidade;
@@ -19,6 +18,7 @@ public class Medico extends Funcionario {
         if (consultas == null) {
             throw new DadosinvalidosException("A lista de consultas não pode estar vazia.");
         }
+        this.consultas = consultas;
     }
 
 
@@ -52,12 +52,14 @@ public class Medico extends Funcionario {
         this.crm = crm;
     }
 
-
-    public AgendaMedico verificarAgenda (){
-
-
-
+    public ArrayList<Consulta> getConsultas() {
+        return consultas;
     }
 
-
+    public void setConsultas(ArrayList<Consulta> consultas) throws DadosinvalidosException {
+        if (consultas == null){
+            throw new DadosinvalidosException("A lista de consultas não pode ser ");
+        }
+        this.consultas = consultas;
+    }
 }
