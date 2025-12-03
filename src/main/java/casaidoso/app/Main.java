@@ -1,13 +1,13 @@
 package casaIdoso.app;
 
-import casaidoso.gerenciadores.GerenciamentoFuncionario;
-import casaidoso.gerenciadores.GerenciamentoIdosos;
-import casaidoso.funcionarios.Medico;
-import casaidoso.funcionarios.Secretaria;
-import casaidoso.funcionarios.Cuidador;
-import casaidoso.idoso.Idoso;
-import casaidoso.consulta.Consulta;
-import casaidoso.consulta.StatusConsulta;
+import casaIdoso.gerenciadores.GerenciamentoFuncionario;
+import casaIdoso.gerenciadores.GerenciamentoIdosos;
+import casaIdoso.funcionarios.Medico;
+import casaIdoso.funcionarios.Secretaria;
+import casaIdoso.funcionarios.Cuidador;
+import casaIdoso.idoso.Idoso;
+import casaIdoso.consulta.Consulta;
+import casaIdoso.consulta.StatusConsulta;
 import java.util.Date;
 
 /**
@@ -30,7 +30,7 @@ public class Main {
         gi.adicionar(id1);
 
         // Cuidador redige ocorrência
-        casaidoso.idoso.Ocorrencia o = cuid.redigirOcorrencia(id1.getId(), "Acordou agitado");
+        casaIdoso.idoso.Ocorrencia o = cuid.redigirOcorrencia(id1.getId(), "Acordou agitado");
         id1.adicionarOcorrencia(o);
 
         // Cuidador solicita consulta via secretaria

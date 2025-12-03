@@ -1,6 +1,6 @@
-package casaidoso.gerenciadores;
+package casaIdoso.gerenciadores;
 
-import casaidoso.funcionarios.Funcionario;
+import casaIdoso.funcionarios.Funcionario;
 import java.util.ArrayList;
 import java.util.List;
 
