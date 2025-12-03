@@ -1,5 +1,8 @@
 package idoso;
 
+import atividade.Atividade;
+import consulta.Consulta;
+
 import java.util.ArrayList;
 
 public class Idoso {

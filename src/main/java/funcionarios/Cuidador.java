@@ -1,5 +1,7 @@
 package funcionarios;
 
+import idoso.Idoso;
+
 import java.util.ArrayList;
 
 public class Cuidador {
@@ -15,6 +17,7 @@ public class Cuidador {
 
     public String redigirProblemaSobreIdoso(){
 
+        return "";
     }
 
 }
