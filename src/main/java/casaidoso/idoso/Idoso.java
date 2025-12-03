@@ -1,18 +1,16 @@
-package casaidoso.idoso;
+package casaIdoso.idoso;
 
 import java.util.ArrayList;
 import java.util.List;
-import casaidoso.consulta.Consulta;
+import casaIdoso.consulta.Consulta;
 
-/**
- * Domain: Idoso. Keeps minimal logic and lists of occurrences & consultas.
- */
+
 public class Idoso {
     private int id;
     private String nome;
     private int idade;
     private int quarto;
-    private List<Ocorrencia> ocorrencias = new ArrayList<>();
+    private List<casaidoso.idoso.Ocorrencia> ocorrencias = new ArrayList<>();
     private List<Consulta> historicoConsultas = new ArrayList<>();
 
     public Idoso(int id, String nome, int idade, int quarto) {
@@ -27,8 +25,8 @@ public class Idoso {
     public int getIdade() { return idade; }
     public int getQuarto() { return quarto; }
 
-    public void adicionarOcorrencia(Ocorrencia o) { ocorrencias.add(o); }
-    public List<Ocorrencia> getOcorrencias() { return new ArrayList<>(ocorrencias); }
+    public void adicionarOcorrencia(casaidoso.idoso.Ocorrencia o) { ocorrencias.add(o); }
+    public List<casaidoso.idoso.Ocorrencia> getOcorrencias() { return new ArrayList<>(ocorrencias); }
 
     public void adicionarConsultaHistorico(Consulta c) { historicoConsultas.add(c); }
     public List<Consulta> getHistoricoConsultas() { return new ArrayList<>(historicoConsultas); }

@@ -1,12 +1,10 @@
-package casaidoso.gerenciadores;
+package casaIdoso.gerenciadores;
 
-import casaidoso.idoso.Idoso;
+import casaIdoso.idoso.Idoso;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Simple in-memory manager for idosos.
- */
+
 public class GerenciamentoIdosos {
     private List<Idoso> idosos = new ArrayList<>();
 

@@ -1,6 +1,6 @@
-package casaidoso.funcionarios;
+package casaIdoso.funcionarios;
 
-import casaidoso.exceptions.DadosInvalidosException;
+import casaIdoso.exceptions.DadosinvalidosException;
 
 /**
  * Base class for funcionarios.
@@ -11,9 +11,9 @@ public abstract class Funcionario {
     protected String nome;
     protected String cargo;
 
-    public Funcionario(int id, String cpf, String nome, String cargo) throws DadosInvalidosException {
-        if (id < 0) throw new DadosInvalidosException("id não pode ser negativo");
-        if (cpf == null || cpf.isBlank()) throw new DadosInvalidosException("cpf inválido");
+    public Funcionario(int id, String cpf, String nome, String cargo) throws DadosinvalidosException {
+        if (id < 0) throw new DadosinvalidosException("id não pode ser negativo");
+        if (cpf == null || cpf.isBlank()) throw new DadosinvalidosException("cpf inválido");
         this.id = id;
         this.cpf = cpf;
         this.nome = nome;

@@ -1,4 +1,4 @@
-package casaidoso.idoso;
+package casaIdoso.idoso;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

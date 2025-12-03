@@ -1,19 +1,22 @@
-package casaidoso.funcionarios;
+package casaIdoso.funcionarios;
 
-import casaidoso.consulta.Consulta;
+import casaIdoso.consulta.Consulta;
+import casaIdoso.exceptions.DadosinvalidosException;
 
 /**
  * Secretaria: responsável por validar e agendar consultas.
  */
 public class Secretaria extends Funcionario {
 
-    public Secretaria(int id, String cpf, String nome) throws Exception {
-        super(id, cpf, nome, "Secretaria");
+
+
+    public Secretaria(int id, String cpf, String nome, String cargo) throws Exception {
+        super(id, cpf, nome, cargo);
     }
 
     public void agendarConsulta(Consulta consulta) {
         if (consulta.getMedico() == null) throw new IllegalArgumentException("Consulta sem médico");
         consulta.getMedico().getAgenda().agendar(consulta);
-        consulta.setStatus(casaidoso.consulta.StatusConsulta.AGENDADA);
+        consulta.setStatus(casaIdoso.consulta.StatusConsulta.AGENDADA);
     }
 }

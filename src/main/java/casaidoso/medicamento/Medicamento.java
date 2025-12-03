@@ -1,4 +1,4 @@
-package casaidoso.medicamento;
+package casaIdoso.medicamento;
 
 public class Medicamento {
     private int id;

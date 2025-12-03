@@ -1,9 +1,9 @@
-package casaidoso.funcionarios;
+package casaIdoso.funcionarios;
 
-import casaidoso.idoso.Idoso;
-import casaidoso.idoso.Ocorrencia;
-import casaidoso.consulta.Consulta;
-import casaidoso.funcionarios.Secretaria;
+import casaIdoso.idoso.Idoso;
+import casaIdoso.idoso.Ocorrencia;
+import casaIdoso.consulta.Consulta;
+import casaIdoso.funcionarios.Secretaria;
 import java.util.ArrayList;
 import java.util.List;
 

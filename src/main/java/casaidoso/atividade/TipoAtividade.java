@@ -1,4 +1,4 @@
-package casaidoso.atividade;
+package casaIdoso.atividade;
 
 public enum TipoAtividade {
     LAZER,

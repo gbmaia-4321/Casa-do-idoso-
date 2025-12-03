@@ -1,4 +1,4 @@
-package casaidoso.consulta;
+package casaIdoso.consulta;
 
 public enum StatusConsulta {
     AGENDADA,

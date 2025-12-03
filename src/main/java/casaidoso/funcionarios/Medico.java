@@ -1,7 +1,7 @@
-package casaidoso.funcionarios;
+package casaIdoso.funcionarios;
 
-import casaidoso.agendas.AgendaMedico;
-import casaidoso.consulta.Consulta;
+import casaIdoso.agendas.AgendaMedico;
+import casaIdoso.consulta.Consulta;
 import java.util.List;
 import java.util.ArrayList;
 

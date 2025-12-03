@@ -1,7 +1,7 @@
-package casaidoso.consulta;
+package casaIdoso.consulta;
 
-import casaidoso.idoso.Idoso;
-import casaidoso.funcionarios.Medico;
+import casaIdoso.idoso.Idoso;
+import casaIdoso.funcionarios.Medico;
 import java.util.Date;
 import java.util.Objects;
 
