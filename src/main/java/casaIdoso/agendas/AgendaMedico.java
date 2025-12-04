@@ -1,4 +1,4 @@
-package casaIdoso.agendas;
+package agendas;
 
 import casaIdoso.consulta.Consulta;
 import java.util.ArrayList;

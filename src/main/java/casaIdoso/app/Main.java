@@ -1,4 +1,4 @@
-package casaIdoso.app;
+package app;
 
 import casaIdoso.gerenciadores.GerenciamentoFuncionario;
 import casaIdoso.gerenciadores.GerenciamentoIdosos;
