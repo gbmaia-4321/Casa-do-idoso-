@@ -1,6 +1,7 @@
 package funcionarios;
 
 import casaIdoso.exceptions.DadosinvalidosException;
+import exceptions.DadosinvalidosException;
 
 /**
  * Base class for funcionarios.
@@ -11,9 +12,24 @@ public abstract class Funcionario {
     protected String nome;
     protected String cargo;
 
-    public Funcionario(int id, String cpf, String nome, String cargo) throws DadosinvalidosException {
-        if (id < 0) throw new DadosinvalidosException("id não pode ser negativo");
-        if (cpf == null || cpf.isBlank()) throw new DadosinvalidosException("cpf inválido");
+    public Funcionario(int id, String cpf, String nome, String cargo) throws exceptions.DadosinvalidosException {
+//         Id
+        if (id <= 0) {
+            throw new exceptions.DadosinvalidosException("O ID do funcionário deve ser maior que zero.");
+        }
+//         CPF
+        if (cpf == null || cpf.isBlank()){
+            throw new exceptions.DadosinvalidosException("O CPF do funcionário não pode ser vazio.");
+        }
+//         Nome
+        if (nome == null || nome.isBlank()){
+            throw new exceptions.DadosinvalidosException("O nome do funcionário não pode ser vazio.");
+        }
+//         Cargo
+        if (cargo == null || cargo.isBlank()){
+            throw new exceptions.DadosinvalidosException("O cargo do funcionário não pode ser vazio.");
+        }
+
         this.id = id;
         this.cpf = cpf;
         this.nome = nome;
@@ -25,8 +41,25 @@ public abstract class Funcionario {
     public String getNome() { return nome; }
     public String getCargo() { return cargo; }
 
+    public void setNome(String nome) throws exceptions.DadosinvalidosException {
+        if (nome == null || nome.isBlank()) {
+            throw new exceptions.DadosinvalidosException("O nome não pode ser vazio.");
+        }
+        this.nome = nome;
+    }
+
+    public void setCargo(String cargo) throws exceptions.DadosinvalidosException{
+        if (cargo == null || cargo.isBlank()){
+            throw new exceptions.DadosinvalidosException("O cargo não pode ser vazio.");
+        }
+        this.cargo = cargo;
+    }
+
     @Override
     public String toString() {
-        return nome + " (" + cargo + ")";
+        return "Funcionário: " + nome +
+                " | ID: " + id +
+                " | CPF: " + cpf +
+                " | Cargo: " + cargo;
     }
 }
