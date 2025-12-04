@@ -1,6 +1,6 @@
-package casaIdoso.gerenciadores;
+package gerenciadores;
 
-import casaIdoso.idoso.Idoso;
+import idoso.Idoso;
 import java.util.ArrayList;
 import java.util.List;
 

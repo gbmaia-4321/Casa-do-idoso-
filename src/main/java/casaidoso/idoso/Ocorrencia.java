@@ -1,6 +1,6 @@
 package idoso;
 
-import casaIdoso.funcionarios.Cuidador;
+import funcionarios.Cuidador;
 import java.util.Date;
 
 /**

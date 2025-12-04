@@ -1,14 +1,14 @@
 package funcionarios;
 
 import agendas.AgendaMedico;
-import casaIdoso.consulta.Consulta;
+import consulta.Consulta;
 import java.util.List;
 import java.util.ArrayList;
 
 /**
  * Médico: possui agenda.
  */
-public class Medico extends casaIdoso.funcionarios.Funcionario {
+public class Medico extends funcionarios.Funcionario {
     private String especialidade;
     private agendas.AgendaMedico agenda;
 

@@ -1,13 +1,13 @@
 package app;
 
-import casaIdoso.gerenciadores.GerenciamentoFuncionario;
-import casaIdoso.gerenciadores.GerenciamentoIdosos;
+import gerenciadores.GerenciamentoFuncionario;
+import gerenciadores.GerenciamentoIdosos;
 import funcionarios.Medico;
-import casaIdoso.funcionarios.Secretaria;
-import casaIdoso.funcionarios.Cuidador;
-import casaIdoso.idoso.Idoso;
-import casaIdoso.consulta.Consulta;
-import casaIdoso.consulta.StatusConsulta;
+import funcionarios.Secretaria;
+import funcionarios.Cuidador;
+import idoso.Idoso;
+import consulta.Consulta;
+import consulta.StatusConsulta;
 import java.util.Date;
 
 /**
@@ -19,7 +19,7 @@ public class Main {
         GerenciamentoIdosos gi = new GerenciamentoIdosos();
 
         Medico medico = new Medico(1, "11111111111", "Dra. Silva", "Geriatria");
-        Secretaria sec = new Secretaria(2, "22222222222", "Mariana");
+        Secretaria sec = new Secretaria(2, "22222222222", "Mariana","Secretaria");
         Cuidador cuid = new Cuidador(3, "33333333333", "João");
 
         gf.adicionar(medico);
@@ -30,7 +30,7 @@ public class Main {
         gi.adicionar(id1);
 
         // Cuidador redige ocorrência
-        casaIdoso.idoso.Ocorrencia o1 = cuid.redigirOcorrencia(id1.getId(), "Acordou agitado");
+        idoso.Ocorrencia o1 = cuid.redigirOcorrencia(id1.getId(), "Acordou agitado");
         id1.adicionarOcorrencia(o1);
 
         // Cuidador solicita consulta via secretaria

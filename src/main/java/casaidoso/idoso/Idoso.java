@@ -10,7 +10,7 @@ public class Idoso {
     private String nome;
     private int idade;
     private int quarto;
-    private List<casaIdoso.idoso.Ocorrencia> ocorrencias = new ArrayList<>();
+    private List<idoso.Ocorrencia> ocorrencias = new ArrayList<>();
     private List<Consulta> historicoConsultas = new ArrayList<>();
 
     public Idoso(int id, String nome, int idade, int quarto) {
@@ -25,8 +25,8 @@ public class Idoso {
     public int getIdade() { return idade; }
     public int getQuarto() { return quarto; }
 
-    public void adicionarOcorrencia(casaIdoso.idoso.Ocorrencia o) { ocorrencias.add(o); }
-    public List<casaIdoso.idoso.Ocorrencia> getOcorrencias() { return new ArrayList<>(ocorrencias); }
+    public void adicionarOcorrencia(idoso.Ocorrencia o) { ocorrencias.add(o); }
+    public List<idoso.Ocorrencia> getOcorrencias() { return new ArrayList<>(ocorrencias); }
 
     public void adicionarConsultaHistorico(Consulta c) { historicoConsultas.add(c); }
     public List<Consulta> getHistoricoConsultas() { return new ArrayList<>(historicoConsultas); }

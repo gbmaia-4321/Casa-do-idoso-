@@ -3,14 +3,14 @@ package funcionarios;
 import idoso.Idoso;
 import idoso.Ocorrencia;
 import consulta.Consulta;
-import casaIdoso.funcionarios.Secretaria;
+import funcionarios.Secretaria;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Cuidador: tem lista de ids de idosos sob responsabilidade.
  */
-public class Cuidador extends casaIdoso.funcionarios.Funcionario {
+public class Cuidador extends funcionarios.Funcionario {
     private List<Integer> idsIdosos = new ArrayList<>();
 
     public Cuidador(int id, String cpf, String nome) throws Exception {
@@ -27,6 +27,6 @@ public class Cuidador extends casaIdoso.funcionarios.Funcionario {
     }
 
     public void solicitarConsulta(Consulta consulta, Secretaria secretaria) {
-        secretaria.agendarConsulta();
+        secretaria.agendarConsulta(consulta);
     }
 }
