@@ -1,4 +1,4 @@
-package casaIdoso.idoso;
+package idoso;
 
 import casaIdoso.funcionarios.Cuidador;
 import java.util.Date;

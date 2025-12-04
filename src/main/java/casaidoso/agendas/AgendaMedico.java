@@ -1,6 +1,6 @@
 package agendas;
 
-import casaIdoso.consulta.Consulta;
+import casaidoso.consulta.Consulta;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

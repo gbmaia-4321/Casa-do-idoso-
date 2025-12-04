@@ -1,4 +1,4 @@
-package casaIdoso.funcionarios;
+package funcionarios;
 
 import casaIdoso.exceptions.DadosinvalidosException;
 

@@ -1,8 +1,8 @@
-package casaIdoso.funcionarios;
+package funcionarios;
 
-import casaIdoso.idoso.Idoso;
-import casaIdoso.idoso.Ocorrencia;
-import casaIdoso.consulta.Consulta;
+import idoso.Idoso;
+import idoso.Ocorrencia;
+import consulta.Consulta;
 import casaIdoso.funcionarios.Secretaria;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Cuidador: tem lista de ids de idosos sob responsabilidade.
  */
-public class Cuidador extends Funcionario {
+public class Cuidador extends casaIdoso.funcionarios.Funcionario {
     private List<Integer> idsIdosos = new ArrayList<>();
 
     public Cuidador(int id, String cpf, String nome) throws Exception {
@@ -27,6 +27,6 @@ public class Cuidador extends Funcionario {
     }
 
     public void solicitarConsulta(Consulta consulta, Secretaria secretaria) {
-        secretaria.agendarConsulta(consulta);
+        secretaria.agendarConsulta();
     }
 }

@@ -2,7 +2,7 @@ package app;
 
 import casaIdoso.gerenciadores.GerenciamentoFuncionario;
 import casaIdoso.gerenciadores.GerenciamentoIdosos;
-import casaIdoso.funcionarios.Medico;
+import funcionarios.Medico;
 import casaIdoso.funcionarios.Secretaria;
 import casaIdoso.funcionarios.Cuidador;
 import casaIdoso.idoso.Idoso;

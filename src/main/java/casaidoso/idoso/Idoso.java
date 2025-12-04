@@ -1,8 +1,8 @@
-package casaIdoso.idoso;
+package idoso;
 
 import java.util.ArrayList;
 import java.util.List;
-import casaIdoso.consulta.Consulta;
+import consulta.Consulta;
 
 
 public class Idoso {

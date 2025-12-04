@@ -1,4 +1,4 @@
-package casaIdoso.medicamento;
+package medicamento;
 
 import java.util.ArrayList;
 import java.util.List;

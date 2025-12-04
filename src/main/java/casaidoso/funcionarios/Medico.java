@@ -1,6 +1,6 @@
-package casaIdoso.funcionarios;
+package funcionarios;
 
-import casaIdoso.agendas.AgendaMedico;
+import agendas.AgendaMedico;
 import casaIdoso.consulta.Consulta;
 import java.util.List;
 import java.util.ArrayList;
@@ -8,9 +8,9 @@ import java.util.ArrayList;
 /**
  * Médico: possui agenda.
  */
-public class Medico extends Funcionario {
+public class Medico extends casaIdoso.funcionarios.Funcionario {
     private String especialidade;
-    private AgendaMedico agenda;
+    private agendas.AgendaMedico agenda;
 
     public Medico(int id, String cpf, String nome, String especialidade) throws Exception {
         super(id, cpf, nome, "Medico");

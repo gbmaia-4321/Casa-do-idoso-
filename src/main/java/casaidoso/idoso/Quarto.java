@@ -1,4 +1,4 @@
-package casaIdoso.idoso;
+package idoso;
 
 import java.util.ArrayList;
 import java.util.List;
