@@ -43,3 +43,4 @@ public class Idoso {
         return "Idoso{"+"id="+id+", nome='"+nome+"', idade="+idade+"}";
     }
 }
+
