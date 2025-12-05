@@ -35,4 +35,7 @@ public class AgendaMedico {
     public boolean isDisponivel(Date data, String hora) {
         return consultas.stream().noneMatch(c -> c.getData().equals(data) && c.getHora().equals(hora));
     }
+
+
+
 }

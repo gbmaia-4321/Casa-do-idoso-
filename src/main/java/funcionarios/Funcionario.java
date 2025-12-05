@@ -1,22 +1,19 @@
 package funcionarios;
 
-import exceptions.DadosinvalidosException;
-import exceptions.FuncionarioJaExistenteException;
-
 /**
  * Base class for funcionarios.
  */
 public abstract class Funcionario {
+    private static int contador = 1;
+
+
     protected int id;
     protected String cpf;
     protected String nome;
-    protected String cargo;
+    protected Cargo cargo;
 
-    public Funcionario(int id, String cpf, String nome, String cargo) throws exceptions.DadosinvalidosException {
-//         Id
-        if (id <= 0) {
-            throw new exceptions.DadosinvalidosException("O ID do funcionário deve ser maior que zero.");
-        }
+    public Funcionario(String cpf, String nome, Cargo cargo) throws exceptions.DadosinvalidosException {
+
 //         CPF
         if (cpf == null || cpf.isBlank()){
             throw new exceptions.DadosinvalidosException("O CPF do funcionário não pode ser vazio.");
@@ -26,11 +23,11 @@ public abstract class Funcionario {
             throw new exceptions.DadosinvalidosException("O nome do funcionário não pode ser vazio.");
         }
 //         Cargo
-        if (cargo == null || cargo.isBlank()){
+        if (cargo == null){
             throw new exceptions.DadosinvalidosException("O cargo do funcionário não pode ser vazio.");
         }
 
-        this.id = id;
+        this.id = contador++;
         this.cpf = cpf;
         this.nome = nome;
         this.cargo = cargo;
@@ -39,7 +36,7 @@ public abstract class Funcionario {
     public int getId() { return id; }
     public String getCpf() { return cpf; }
     public String getNome() { return nome; }
-    public String getCargo() { return cargo; }
+    public Cargo getCargo() { return cargo; }
 
     public void setNome(String nome) throws exceptions.DadosinvalidosException {
         if (nome == null || nome.isBlank()) {
@@ -48,8 +45,8 @@ public abstract class Funcionario {
         this.nome = nome;
     }
 
-    public void setCargo(String cargo) throws exceptions.DadosinvalidosException{
-        if (cargo == null || cargo.isBlank()){
+    public void setCargo(Cargo cargo) throws exceptions.DadosinvalidosException{
+        if (cargo == null){
             throw new exceptions.DadosinvalidosException("O cargo não pode ser vazio.");
         }
         this.cargo = cargo;

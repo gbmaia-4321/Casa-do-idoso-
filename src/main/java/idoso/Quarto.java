@@ -15,6 +15,7 @@ public class Quarto {
 
     public int getNumero() { return numero; }
     public int getCapacidade() { return capacidade; }
+    public List<Integer> getIdsIdosos() { return new ArrayList<>(idsIdosos); }
 
     public boolean adicionarIdoso(int idosoId) {
         if (idsIdosos.size() >= capacidade) return false;

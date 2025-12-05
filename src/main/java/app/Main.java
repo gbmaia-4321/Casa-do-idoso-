@@ -22,9 +22,9 @@ public class Main {
         Secretaria sec = new Secretaria(2, "22222222222", "Mariana","Secretaria");
         Cuidador cuid = new Cuidador(3, "33333333333", "João");
 
-        gf.adicionar(medico);
-        gf.adicionar(sec);
-        gf.adicionar(cuid);
+        gf.cadastrar(medico);
+        gf.cadastrar(sec);
+        gf.cadastrar(cuid);
 
         Idoso id1 = new Idoso(1, "Seu Antônio", 78, 101);
         gi.adicionar(id1);

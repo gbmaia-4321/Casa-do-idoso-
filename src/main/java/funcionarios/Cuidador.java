@@ -4,7 +4,7 @@ import exceptions.DadosinvalidosException;
 import idoso.Idoso;
 import idoso.Ocorrencia;
 import consulta.Consulta;
-import funcionarios.Secretaria;
+
 import java.util.ArrayList;
 
 /**
@@ -14,8 +14,8 @@ public class Cuidador extends funcionarios.Funcionario {
 
     private ArrayList<Idoso> idosos = new ArrayList<>();
 
-    public Cuidador(int id, String cpf, String nome) throws DadosinvalidosException {
-        super(id, cpf, nome, "Cuidador");
+    public Cuidador( String cpf, String nome) throws DadosinvalidosException {
+        super(cpf, nome, Cargo.CUIDADOR);
         if (nome == null || nome.isBlank()){
             throw new DadosinvalidosException("O nome do cuidador não pode ser vazio.");
         }

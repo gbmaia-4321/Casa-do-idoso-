@@ -4,24 +4,28 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import consulta.Consulta;
+import medicamento.Receita;
 
 
 public class Idoso {
     private static int contador = 1;
+
     private int id;
     private String nome;
     private int idade;
     private int quarto;
-    private boolean usaInsulina;
+    private boolean insulinaAplicada;
+
     private ArrayList<Ocorrencia> ocorrencias = new ArrayList<>();
     private ArrayList<Consulta> historicoConsultas = new ArrayList<>();
+    private ArrayList<Receita> receitas;
 
-    public Idoso(int id, String nome, int idade, int quarto, boolean usaInsulina) {
+    public Idoso(String nome, int idade, int quarto, boolean insulinaAplicada) {
         this.id = contador++;
         this.nome = nome;
         this.idade = idade;
         this.quarto = quarto;
-        this.usaInsulina = usaInsulina;
+        this.insulinaAplicada = insulinaAplicada;
     }
 
     public int getId() { return id; }
@@ -37,6 +41,14 @@ public class Idoso {
 
     public void adicionarConsultaHistorico(Consulta c) { historicoConsultas.add(c); }
     public List<Consulta> getHistoricoConsultas() { return new ArrayList<>(historicoConsultas); }
+
+    public void adicionarReceita(Receita receita) {
+        receitas.add(receita);
+    }
+
+    public ArrayList<Receita> getReceitas() {
+        return receitas;
+    }
 
     @Override
     public String toString() {
