@@ -5,6 +5,7 @@ import gerenciadores.GerenciamentoIdosos;
 import funcionarios.Medico;
 import funcionarios.Secretaria;
 import funcionarios.Cuidador;
+import gerenciadores.GerenciamentoQuartos;
 import idoso.Idoso;
 import consulta.Consulta;
 import consulta.StatusConsulta;
@@ -17,17 +18,18 @@ public class Main {
     public static void main(String[] args) throws Exception {
         GerenciamentoFuncionario gf = new GerenciamentoFuncionario();
         GerenciamentoIdosos gi = new GerenciamentoIdosos();
+        GerenciamentoQuartos gerQ = new GerenciamentoQuartos();
 
-        Medico medico = new Medico(1, "11111111111", "Dra. Silva", "Geriatria");
-        Secretaria sec = new Secretaria(2, "22222222222", "Mariana","Secretaria");
-        Cuidador cuid = new Cuidador(3, "33333333333", "João");
+        Medico medico = new Medico("11111111111", "Dra. Silva", "Geriatria");
+        Secretaria sec = new Secretaria( "22222222222", "Mariana",);
+        Cuidador cuid = new Cuidador( "33333333333", "João");
 
-        gf.cadastrar(medico);
-        gf.cadastrar(sec);
-        gf.cadastrar(cuid);
+        gf.cadastrar(medico.getCpf(),medico.getNome(),medico.getCargo(),medico.getEspecialidade());
+        gf.cadastrar(sec.getCpf(),sec.getNome(),sec.getCargo(),"");
+        gf.cadastrar(cuid.getCpf(), cuid.getNome(), cuid.getCargo(),"");
 
-        Idoso id1 = new Idoso(1, "Seu Antônio", 78, 101);
-        gi.adicionar(id1);
+        Idoso id1 = new Idoso("Seu Antônio",78, 200,true);
+        gi.cadastrar(id1.getNome(), id1.getIdade(),200,true);
 
         // Cuidador redige ocorrência
         idoso.Ocorrencia o1 = cuid.redigirOcorrencia(id1.getId(), "Acordou agitado");

@@ -2,6 +2,9 @@ package consulta;
 
 import idoso.Idoso;
 import funcionarios.Medico;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Date;
 import java.util.Objects;
 
@@ -29,16 +32,45 @@ public class Consulta {
     }
 
     // getters and setters
-    public int getId() { return id; }
-    public Date getData() { return data; }
-    public void setData(Date data) { this.data = data; }
-    public String getHora() { return hora; }
-    public void setHora(String hora) { this.hora = hora; }
-    public Idoso getIdoso() { return idoso; }
-    public Medico getMedico() { return medico; }
-    public String getDescricao() { return descricao; }
-    public StatusConsulta getStatus() { return status; }
-    public void setStatus(StatusConsulta status) { this.status = status; }
+    public int getId() {
+        return id;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public Idoso getIdoso() {
+        return idoso;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public StatusConsulta getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusConsulta status) {
+        this.status = status;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -54,6 +86,29 @@ public class Consulta {
     }
 
 
+    public void registrarConsulta() {
+        String arquivo = "Consulta" + getId() + ".txt";
+
+
+        try {
+            FileWriter writer = new FileWriter(arquivo);
+
+            writer.write("==============Consulta================");
+            writer.write("\nId= " + id);
+            writer.write("\nData= " + data);
+            writer.write("\nHora= " + hora);
+            writer.write("\nIdoso= " + (idoso != null ? idoso.getNome() : "null"));
+            writer.write("\nMedico= " + (medico != null ? medico.getNome() : "null"));
+            writer.write("\nStatus= " + status);
+            writer.write("\n======================================");
+            writer.close();
+
+            System.out.println("Arquivo " + arquivo + " foi criado com sucesso !");
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
 //    public String relatorioConsulta(){
 //        return "=========================================================" + "\n"
 //                +"ID: " + id +"\n"
@@ -66,4 +121,6 @@ public class Consulta {
 //                +"========================================================";
 //    }
 
+    }
 }
+
