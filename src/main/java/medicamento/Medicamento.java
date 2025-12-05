@@ -1,5 +1,4 @@
 package medicamento;
-
 public class Medicamento {
     private int id;
     private String nome;
@@ -15,4 +14,11 @@ public class Medicamento {
 
     public int getId() { return id; }
     public String getNome() { return nome; }
+    public String getDosagem() { return dosagem; }
+    public String getInstrucoes() { return instrucoes; }
+
+    @Override
+    public String toString() {
+        return nome + " (" + dosagem + ")";
+    }
 }

@@ -1,5 +1,7 @@
 package medicamento;
 
+import idoso.Idoso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,17 +9,34 @@ import java.util.List;
  * Receita simples: mantém lista de medicamentos.
  */
 public class Receita {
-    private int id;
-    private int idosoId;
-    private int medicoId;
-    private List<Medicamento> medicamentos = new ArrayList<>();
+    private String dosagem;
+    private String frequencia;
+    private String horario;
 
-    public Receita(int id, int idosoId, int medicoId) {
-        this.id = id;
-        this.idosoId = idosoId;
-        this.medicoId = medicoId;
+    private Medicamento medicamento;  // agregação
+    private Idoso idoso;              // dono da receita (relação do diagrama)
+
+    public Receita(String dosagem, String frequencia, String horario,
+                   Medicamento medicamento, Idoso idoso) {
+        this.dosagem = dosagem;
+        this.frequencia = frequencia;
+        this.horario = horario;
+        this.medicamento = medicamento;
+        this.idoso = idoso;
     }
 
-    public void adicionarMedicamento(Medicamento m) { medicamentos.add(m); }
-    public List<Medicamento> getMedicamentos() { return new ArrayList<>(medicamentos); }
+    public String getDosagem() { return dosagem; }
+    public String getFrequencia() { return frequencia; }
+    public String getHorario() { return horario; }
+    public Medicamento getMedicamento() { return medicamento; }
+    public Idoso getIdoso() { return idoso; }
+
+    @Override
+    public String toString() {
+        return "Medicamento: " + medicamento.getNome() +
+                " | Dosagem: " + dosagem +
+                " | Frequência: " + frequencia +
+                " | Horário: " + horario;
+    }
 }
+
