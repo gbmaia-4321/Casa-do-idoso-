@@ -11,6 +11,8 @@ import idoso.Idoso;
 import consulta.Consulta;
 import consulta.StatusConsulta;
 import idoso.RegistroDiarioIdoso;
+import medicamento.Medicamento;
+import medicamento.Receita;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -23,43 +25,31 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) throws Exception {
+        // Chamando alguma classes do projeto e classes de biblioteca
 
-        try (Scanner input = new Scanner(System.in)){
 
+        Medicamento medicamento = new Medicamento(1,"Parecetamol","3 vezes","Uso diario ate em 7 dias");
+        Scanner input = new Scanner(System.in);
         ArrayList<Consulta> listaConsulta = new ArrayList<>();
         Date date = new Date();
         GerenciamentoFuncionario gf = new GerenciamentoFuncionario();
         GerenciamentoIdosos gi = new GerenciamentoIdosos();
         GerenciamentoQuartos gerQ = new GerenciamentoQuartos();
 
-            // CADASTRO DE FUNCIONÁRIOS
+        // Adicionando Funcionario no sistema
 
         Medico medico = new Medico("11111111111", "Dra. Silva", "Geriatria");
         Secretaria sec = new Secretaria( "22222222222", "Mariana",gi,gf,gerQ);
         Cuidador cuid = new Cuidador( "33333333333", "João");
 
-
         gf.cadastrar(medico.getCpf(),medico.getNome(),medico.getCargo(),medico.getEspecialidade());
         gf.cadastrar(sec.getCpf(),sec.getNome(),sec.getCargo(),"");
         gf.cadastrar(cuid.getCpf(), cuid.getNome(), cuid.getCargo(),"");
 
-        }
-
-
-
-        // Adicionando Funcionario no sistema
-
-
-
         //Inicio
         System.out.println("Seja bem vindo a casa de idoso!");
-        String nome = input.nextLine();
-
         System.out.println("Digite o nome do idoso: ");
-        if (nome == null || nome.isBlank()) {
-            System.out.println("ERRO: nome invalido");
-            return;
-        }
+        String nome = input.nextLine();
 
         System.out.println("Digite a idade do "+ nome);
         int idade = Integer.parseInt(input.nextLine());
@@ -87,6 +77,9 @@ public class Main {
         // Cuidador solicita consulta via secretaria
         Consulta c = new Consulta(1, new Date(), "15:00", id1, medico, "Dor no joelho", StatusConsulta.AGENDADA);
         cuid.solicitarConsulta(c, sec);
+        Receita receita = new Receita("5mg","3 vezes ao dia","5 horas",medicamento,id1);
+        System.out.println(receita.toString());
+        receita.geraReceita();
 
 
         System.out.println("Consultas do medico: " + medico.getAgenda().listar().size());
@@ -96,4 +89,5 @@ public class Main {
 
     }
 }
+
 

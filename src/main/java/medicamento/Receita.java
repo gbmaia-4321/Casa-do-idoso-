@@ -2,6 +2,8 @@ package medicamento;
 
 import idoso.Idoso;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,10 +35,33 @@ public class Receita {
 
     @Override
     public String toString() {
-        return "Medicamento: " + medicamento.getNome() +
-                " | Dosagem: " + dosagem +
-                " | Frequência: " + frequencia +
-                " | Horário: " + horario;
+        return  "====================Receita========================" +
+                "\nMedicamento: " + medicamento.getNome() +
+                "\nDosagem: " + dosagem +
+                "\nFrequência: " + frequencia +
+                "\nHorário: " + horario +
+                "==================================================";
+    }
+
+    public void geraReceita(){
+        String arquivo = "Receita" + medicamento.getId() + ".txt";
+
+
+        try {
+            FileWriter writer = new FileWriter(arquivo);
+            writer.write("==================Receita======================");
+            writer.write("\nMedicamento: " + medicamento.getNome());
+            writer.write("\nDosagem: " + dosagem );
+            writer.write("\nFrequência: " + frequencia);
+            writer.write("\nHorário: " + horario);
+            writer.write("===============================================");
+            writer.close();
+
+            System.out.println("Arquivo " + arquivo + " foi criado com sucesso !");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
 
