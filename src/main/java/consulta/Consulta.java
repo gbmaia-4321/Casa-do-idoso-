@@ -1,5 +1,6 @@
 package consulta;
 
+import exceptions.DadosinvalidosException;
 import idoso.Idoso;
 import funcionarios.Medico;
 
@@ -21,7 +22,22 @@ public class Consulta {
     private String descricao;
     private StatusConsulta status;
 
-    public Consulta(int id, Date data, String hora, Idoso idoso, Medico medico, String descricao, StatusConsulta status) {
+    public Consulta(int id, Date data, String hora, Idoso idoso, Medico medico, String descricao, StatusConsulta status) throws DadosinvalidosException {
+        if (data == null)
+            throw new DadosinvalidosException("A data da consulta não pode ser nula.");
+
+        if (hora == null || hora.isBlank())
+            throw new DadosinvalidosException("A hora da consulta é obrigatória.");
+
+        if (idoso == null)
+            throw new DadosinvalidosException("A consulta deve ter um idoso associado.");
+
+        if (medico == null)
+            throw new DadosinvalidosException("A consulta deve ter um médico associado.");
+
+        if (status == null)
+            throw new DadosinvalidosException("O status da consulta não pode ser nulo.");
+
         this.id = contador++;
         this.data = data;
         this.hora = hora;
@@ -41,6 +57,8 @@ public class Consulta {
     }
 
     public void setData(Date data) {
+        if (data == null)
+            throw new IllegalArgumentException("Nova data não pode ser nula");
         this.data = data;
     }
 
@@ -49,7 +67,10 @@ public class Consulta {
     }
 
     public void setHora(String hora) {
+        if (hora == null || hora.isBlank())
+            throw new IllegalArgumentException("Nova hora não pode ser vazio.");
         this.hora = hora;
+
     }
 
     public Idoso getIdoso() {
@@ -69,6 +90,8 @@ public class Consulta {
     }
 
     public void setStatus(StatusConsulta status) {
+        if (status == null)
+            throw new IllegalArgumentException("Status não pode ser nulo.");
         this.status = status;
     }
 

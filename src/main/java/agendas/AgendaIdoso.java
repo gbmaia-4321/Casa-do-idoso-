@@ -1,6 +1,8 @@
 package agendas;
 
 import atividade.Atividade;
+import exceptions.DadosinvalidosException;
+
 import java.util.ArrayList;
 
 /**
@@ -11,12 +13,22 @@ public class AgendaIdoso {
     private String nome;
     private ArrayList<Atividade> atividades = new ArrayList<>();
 
-    public AgendaIdoso(int idosoId, String nome) {
+    public AgendaIdoso(int idosoId, String nome) throws DadosinvalidosException {
+        if (idosoId < 0) {
+            throw new DadosinvalidosException("O id do idoso não pode ser negativo.");
+        }
+        if (nome == null || nome.isBlank()){
+            throw new DadosinvalidosException("O nome do idoso não pode ser nulo ou vazio.");
+        }
+
         this.idosoId = idosoId;
         this.nome = nome;
     }
 
-    public void adicionar(Atividade atividade) {
+    public void adicionar(Atividade atividade) throws DadosinvalidosException{
+        if (atividade == null){
+            throw new DadosinvalidosException("Atividade não pode ser nula.");
+        }
         atividades.add(atividade);
     }
 
