@@ -12,6 +12,19 @@ public class Ocorrencia {
     private String descricao;
 
     public Ocorrencia(Cuidador autor, String descricao) {
+        if (descricao == null || descricao.trim().isEmpty()) {
+            throw new IllegalArgumentException("A descrição da ocorrência não pode ser vazia.");
+        }
+
+        if (descricao.length() < 5) {
+            throw new IllegalArgumentException("A descrição deve ter pelo menos 5 caracteres.");
+        }
+
+        // Não obriga autor (pois pode ser sistema), mas se fornecido, valida
+        if (autor != null && (autor.getNome() == null || autor.getNome().trim().isEmpty())) {
+            throw new IllegalArgumentException("O nome do cuidador é inválido.");
+        }
+
         this.data = new Date();
         this.autor = autor;
         this.descricao = descricao;

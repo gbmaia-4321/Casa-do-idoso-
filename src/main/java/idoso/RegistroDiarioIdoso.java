@@ -1,5 +1,7 @@
 package idoso;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -14,8 +16,10 @@ public class RegistroDiarioIdoso {
     private double glicose;
     private boolean insulinaAplicada;
     private String observacoes;
+    private int id;
 
-    public RegistroDiarioIdoso(LocalDate data, LocalTime hora, double pressaoSistolica, double pressaoDiastolica, double glicose, boolean insulinaAplicada, String observacoes) {
+    public RegistroDiarioIdoso(int id, LocalDate data, LocalTime hora, double pressaoSistolica, double pressaoDiastolica, double glicose, boolean insulinaAplicada, String observacoes) {
+        this.id = id;
         this.data = data;
         this.hora = hora;
         this.pressaoSistolica = pressaoSistolica;
@@ -27,6 +31,14 @@ public class RegistroDiarioIdoso {
 
     // getters/setters omitted for brevity
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public LocalDate getData() {
         return data;
@@ -84,5 +96,43 @@ public class RegistroDiarioIdoso {
         this.observacoes = observacoes;
     }
 
+    @Override
+    public String toString() {
+        return "=========================Registro Diario Idoso===========================\n" +
+                "\nData = " + data.getDayOfMonth() + "/" + data.getMonthValue() + "/" + data.getYear() +
+                "\nHora = " + hora.getHour() + ":" + hora.getMinute() +
+                "\nPressao Sistolica = " + pressaoSistolica +
+                "\nPressao Diastolica = " + pressaoDiastolica +
+                "\nGlicose = " + glicose +
+                "\nInsulinaAplicada = " + insulinaAplicada +
+                "\nObservacoes = " + observacoes +
+                " " +
+                "\n=======================================================================";
+    }
 
+    public void registrarDiarioIdoso() {
+        String arquivo = "Registrodiarioidoso" + getId() + ".txt";
+
+
+        try {
+            FileWriter writer = new FileWriter(arquivo);
+
+            writer.write("==============Consulta================");
+            writer.write("\nData = " + data.getDayOfMonth() + "/" + data.getMonthValue() + "/" + data.getYear());
+            writer.write("\nHora = " + hora.getHour() + ":" + hora.getMinute());
+            writer.write("\nPressao Sistolica = " + pressaoSistolica);
+            writer.write("\nPressao Diastolica = " + pressaoDiastolica);
+            writer.write("\nGlicose = " + glicose);
+            writer.write("\nInsulinaAplicada = " + insulinaAplicada);
+            writer.write("\nObservacoes = " + observacoes);
+            writer.write("\n======================================");
+            writer.close();
+
+            System.out.println("Arquivo " + arquivo + " foi criado com sucesso !");
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
+
